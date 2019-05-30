@@ -1,0 +1,13 @@
+body {
+    background-image: url(../images/material-grey-dark-red.jpg);
+    font-family: 'Signika', sans-serif;
+}
+
+  /* label color */
+  .input-field label {
+    color: #e53935;
+  }
+
+  .input-field .active {
+    color: #e53935;
+  }

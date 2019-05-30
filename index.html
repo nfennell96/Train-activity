@@ -1,38 +1,76 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Train Schedule</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-        <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyA1s2PeitpcesOk4w8stS5iFZKuO2TBSc4",
-    authDomain: "train-schedule-25887.firebaseapp.com",
-    databaseURL: "https://train-schedule-25887.firebaseio.com",
-    projectId: "train-schedule-25887",
-    storageBucket: "train-schedule-25887.appspot.com",
-    messagingSenderId: "345155588468"
-  };
-  firebase.initializeApp(config);
-</script>
-    </head>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <title>Train Schedule</title>
+    <!-- CSS, Google Fonts, Materialize -->
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel='stylesheet' href="./assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet">
+    <script src='https://code.jquery.com/jquery.js'></script>
+    <!-- Moment, Materialize, Firebase -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
     
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        
-        <script src="" async defer></script>
-    </body>
+</head>
+
+<body>
+    <div class='container'>
+        <div class='row'>
+            <!-- Header Title Panel -->
+            <div class='card-panel red darken-1 white-text'>
+                <h2 class='center-align'>Train Schedule</h2>
+            </div>
+        </div>
+        <div class='row'>
+            <!-- Display Previous Train Information Panel -->
+            <div class='card-panel trainInfoClass'>
+                <h4 class='center-align'>Current Train Schedule</h4>
+                <table class="table striped center bordered responsive-table" id='trainInformation'>
+                    <thead>
+                        <tr>
+                            <th>Train Name</th>
+                            <th>Destination</th>
+                            <th>Frequency (minutes)</th>
+                            <th>Next Arrival</th>
+                            <th>Minutes Away</th>
+                        </tr>
+                    </thead>
+                    <tbody id="previousSubmissions">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- Enter Train Information Panel -->
+        <div class='row'>
+            <div class='card-panel'>
+                <h4 class='center-align'>Add Your Train</h4>
+                <form>
+                    <div class="input-field">
+                        <input type="text" class="trainDetails" id="trainName">
+                        <label>Train Name</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" class="trainDetails" id="destination">
+                        <label>Destination</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="time" class="trainDetails" id="firstTime">
+                        <label>First Trains</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="number" class="trainDetails" id="frequency">
+                        <label>Frequency (minutes)</label>
+                    </div>
+                    <button type="submit" class="btn red darken-1" id="trainBtn">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+    <script type='text/javascript' src='assets/javascript/train.js'></script>
+</body>
+
 </html>
